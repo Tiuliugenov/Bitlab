@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+     const books = [
+            {"name":"harry potter", "author": "Rowling", "index":"1525", "price":"500$"},
+            {"name":"harry W", "author": "Rowling", "index":"1525", "price":"200$"},
+            {"name":"Война и мир", "author": "Толстой", "index":"155925", "price":"14$"},
+            {"name":"potter", "author": "Rowling", "index":"6666", "price":"5000$"},
+            {"name":"Анна Каренина", "author": "Толстой", "index":"2544", "price":"633$"},
+        ];
+
+        const foundBooks = [];
+        const log = prompt("Insert Author");
+        for(let i = 0; i < books.length; i++) {
+            if(books[i].author == log ){
+                foundBooks.push(books[i]);
+            }
+        }
+
+        if (foundBooks.length > 0) {
+            console.log(foundBooks);
+        } else {
+            console.log("User not found");
+        }
+    </script>
+</body>
+</html>
