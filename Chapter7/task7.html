@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Система управления студентами</title>
+</head>
+<body>
+	<h1>Система управления студентами</h1>
+	<p>Нажмите соответствующую кнопку, чтобы добавить студента, вывести список студентов или завершить программу.</p>
+
+	<button onclick="addStudent()">1. Добавить студента</button>
+	<button onclick="listStudents()">2. Вывести список студентов</button>
+	<button onclick="exit()">0. Завершить программу</button>
+
+	<script>
+		// Создаем пустой список студентов
+		let students = [];
+
+		// Функция для добавления студента в список
+		function addStudent() {
+			let name = prompt("Введите имя студента:");
+			let surname = prompt("Введите фамилию студента:");
+			let gpa = parseFloat(prompt("Введите GPA студента:"));
+
+			// Создаем объект студента
+			let student = {
+				name: name,
+				surname: surname,
+				gpa: gpa
+			};
+
+			// Добавляем студента в список
+			students.push(student);
+		}
+
+		// Функция для вывода списка студентов
+		function listStudents() {
+			// Создаем строку для вывода списка студентов
+			let studentList = "";
+
+			// Проходимся по каждому студенту в списке и добавляем его в строку
+			students.forEach(function(student) {
+				studentList += student.name + " " + student.surname + ", GPA: " + student.gpa + "\n";
+			});
+
+			// Выводим список студентов на экран
+			alert(studentList);
+		}
+
+		// Функция для завершения программы
+		function exit() {
+			// Закрываем окно браузера
+			window.close();
+		}
+	</script>
+</body>
+</html>

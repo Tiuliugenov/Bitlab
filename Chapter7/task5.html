@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+ 
+ let cars = [    {"name":"Toyota", "price": 12000000, "year": 2015, "volume": 2.2}, 
+    {"name":"Mercedes", "price": 70000000, "year": 2018, "volume": 3.8},  
+      {"name":"Toyota", "price": 7000000, "year": 2013, "volume": 2.0},   
+       {"name":"BMW", "price": 11000000, "year": 2011, "volume": 3.0},   
+        {"name":"Lexus", "price": 60000000, "year": 2017 ,"volume": 5.7}];
+        
+
+        function searchByName(cars, name) {
+        let result = "";
+        for (let i = 0; i < cars.length; i++) {
+            if (cars[i]["name"].toLowerCase() === name.toLowerCase()) {
+                result += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + " KZT\n";
+            }
+        }
+        if (result === "") {
+            alert("No cars found with that name.");
+        } else {
+            alert(result);
+        }
+    }
+
+    function searchByPrice(cars, start, end) {
+        let result = "";
+        for (let i = 0; i < cars.length; i++) {
+            if (cars[i]["price"] >= start && cars[i]["price"] <= end) {
+                result += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + " KZT\n";
+            }
+        }
+        if (result === "") {
+            alert("No cars found within that price range.");
+        } else {
+            alert(result);
+        }
+    }
+
+    function searchByYear(cars, start, end) {
+        let result = "";
+        for (let i = 0; i < cars.length; i++) {
+            if (cars[i]["year"] >= start && cars[i]["year"] <= end) {
+                result += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + " KZT\n";
+            }
+        }
+        if (result === "") {
+            alert("No cars found within that range of years.");
+        } else {
+            alert(result);
+        }
+    }
+
+    function searchByVolume(cars, start, end) {
+        let result = "";
+        for (let i = 0; i < cars.length; i++) {
+            if (cars[i]["volume"] >= start && cars[i]["volume"] <= end) {
+                result += cars[i]["name"] + " - " + cars[i]["year"] + " - " + cars[i]["volume"] + " liters - " + cars[i]["price"] + " KZT\n";
+            }
+        }
+        if (result === "") {
+            alert("No cars found within that range of engine volume.");
+        } else {
+            alert(result);
+        }
+    }
+
+        
+      let  choice = 0;
+
+while (choice != 5) {
+  choice = parseInt(prompt("INSERT [1] TO SEARCH BY NAME\nINSERT [2] TO SEARCH BY YEAR\nINSERT [3] TO SEARCH BY ENGINE VOLUME\nINSERT [4] TO SEARCH BY PRICE\nINSERT [5] TO EXIT"));
+  
+  switch (choice) {
+    case 1:
+      let inputname = prompt("INSERT NAME OF CAR:");
+      alert(searchByName(cars, inputname));
+      break;
+    case 2:
+      let startYear = parseInt(prompt("INSERT Start Year"));
+      let endtYear = parseInt(prompt("INSERT End Year"));
+      alert(searchByYear(cars,startYear,endtYear))
+      break;
+      case 3:
+        let startPrice = parseInt(prompt("Insert start price"))
+        let endPrice = parseInt(prompt("Insert end price"))
+        alert(searchByPrice(cars,startPrice,endPrice)); 
+  case 4: 
+  let startVolume = parseInt(promt("Insert start volume"))
+        let endVolume = parseInt(promt("Insert end volume"))
+        alert(searchByVolume(cars,startVolume,endVolume)); 
+  }}
+
+
+    </script>
+</body>
+</html>
